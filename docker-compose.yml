@@ -1,0 +1,18 @@
+master:
+  hostname: master
+  image: quay.io/vektorcloud/spark
+  command: spark-class org.apache.spark.deploy.master.Master -h master
+  ports:
+    - 4040:4040
+    - 6066:6066
+    - 7077:7077
+    - 8080:8080
+
+worker:
+  hostname: worker
+  image: quay.io/vektorcloud/spark
+  command: spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
+  ports:
+    - 8081:8081
+  links:
+    - master
