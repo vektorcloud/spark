@@ -1,6 +1,6 @@
 # Tiny Spark
 
-![circleci][circleci]
+[![circleci][circleci]](https://circleci.com/gh/vektorcloud/spark)
 
 
 Tiny [Apache Spark](spark.apache.com) on Alpine.
